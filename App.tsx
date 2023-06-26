@@ -7,6 +7,7 @@ import {theme} from './src/theme/theme';
 import {Box} from './src/components/Box/Box';
 import {Button} from './src/components/Button/Button';
 import {TextInput} from './src/components/TextInput/TextInput';
+import { Icon } from './src/components/Icon/Icon';
 
 function App(): JSX.Element {
   return (
@@ -20,14 +21,21 @@ function App(): JSX.Element {
             Digite seu e-mail e senha para entrar
           </Text>
 
-          <Box mb="s20">
-            <TextInput label="E-mail" />
-          </Box>
-          <Box>
-            <TextInput label="Senha" />
-          </Box>
+          <TextInput
+            errorMessage="mensagem de error"
+            label="E-mail"
+            placeholder="Digite seu e-mail"
+            boxProps={{mb: 's20'}}
+          />
 
-          <Text color="primary" preset="paragraphSmall" bold mt="s10">
+          <TextInput
+            label="Senha"
+            placeholder="Digite sua senha"
+            RightComponent={<Icon color="gray2" name="eyeOn" />}
+            boxProps={{mb: 's10'}}
+          />
+
+          <Text color="primary" preset="paragraphSmall" bold>
             Esqueci minha senha
           </Text>
 
