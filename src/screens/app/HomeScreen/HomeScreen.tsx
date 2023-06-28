@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, ListRenderItemInfo} from 'react-native';
+import {FlatList, ListRenderItemInfo, StyleProp, ViewStyle} from 'react-native';
 
 import {Screen, PostItem} from '@components';
 import {AppTabScreenProps} from '@routes';
 
 import {Post, postService} from '../../../domain';
+
+import {HomeHeader} from './components/HomeHeader';
 
 export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
   const [postList, setPostList] = useState<Post[]>([]);
@@ -16,12 +18,19 @@ export function HomeScreen({}: AppTabScreenProps<'HomeScreen'>) {
     return <PostItem post={item} />;
   }
   return (
-    <Screen>
+    <Screen style={$screen}>
       <FlatList
         data={postList}
         keyExtractor={item => item.id}
         renderItem={renderItem}
+        ListHeaderComponent={<HomeHeader />}
       />
     </Screen>
   );
 }
+
+const $screen: StyleProp<ViewStyle> = {
+  paddingTop: 0,
+  paddingBottom: 0,
+  paddingHorizontal: 0,
+};
