@@ -11,7 +11,7 @@ import {
   Screen,
   Text,
 } from '@components';
-import {useResetNavigationSuccess} from '@hooks';
+// import {useResetNavigationSuccess} from '@hooks';
 import {RootStackParamList} from '@routes';
 
 import {signUpSchema, SignUpSchema} from './signUpSchema';
@@ -19,7 +19,8 @@ import {signUpSchema, SignUpSchema} from './signUpSchema';
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>;
 
 export function SignUpScreen(props: ScreenProps) {
-  const {reset} = useResetNavigationSuccess();
+  console.log(props);
+  // const {reset} = useResetNavigationSuccess();
   const {control, formState, handleSubmit} = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {

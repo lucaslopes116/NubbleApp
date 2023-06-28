@@ -18,6 +18,7 @@ type ScreenProps = NativeStackScreenProps<
   'ForgotPasswordScreen'
 >;
 export function ForgotPasswordScreen(props: ScreenProps) {
+  console.log(props);
   const {reset} = useResetNavigationSuccess();
   const {control, formState, handleSubmit} = useForm<ForgotPasswordSchema>({
     resolver: zodResolver(forgotPasswordSchema),
@@ -27,6 +28,7 @@ export function ForgotPasswordScreen(props: ScreenProps) {
     mode: 'onChange',
   });
   function submitForm(values: ForgotPasswordSchema) {
+    console.log(values);
     // TODO: submit form
     reset({
       title: `Enviamos as instruções ${'\n'}para seu e-mail`,
