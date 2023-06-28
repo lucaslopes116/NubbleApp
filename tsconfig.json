@@ -17,6 +17,9 @@
       ],
       "@theme": [
         "src/theme"
+      ],
+      "@domain": [
+        "src/domain"
       ]
     }
   }
