@@ -5,7 +5,9 @@ import {
   TextInputProps as RNTextInputProps,
   TextStyle,
 } from 'react-native';
-import {useAppTheme} from '../../hooks/useAppTheme';
+
+import {useAppTheme} from '@hooks';
+
 import {Box, BoxProps} from '../Box/Box';
 import {$fontFamily, $fontSizes, Text} from '../Text/Text';
 
@@ -44,6 +46,7 @@ export function TextInput({
         </Text>
         <Box {...$textInputContainer}>
           <RNTextInput
+            autoCapitalize="none"
             ref={inputRef}
             placeholderTextColor={colors.gray2}
             style={$textInputStyle}
@@ -69,7 +72,7 @@ const $textInputStyle: TextStyle = {
   padding: 0,
   flexGrow: 1,
   flexShrink: 1,
-
+  color: 'black',
   fontFamily: $fontFamily.regular,
   ...$fontSizes.paragraphMedium,
 };
