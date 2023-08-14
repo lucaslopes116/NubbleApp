@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import {api, PageAPI, PageParams} from '@api';
 
 import {PostCommentAPI} from './postCommentTypes';
