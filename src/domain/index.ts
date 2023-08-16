@@ -3,3 +3,4 @@ export * from './Post/useCases/usePostList';
 export * from './Post/postTypes';
 export * from './PostComment/';
 export * from './Auth';
+export * from './User';
