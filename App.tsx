@@ -15,6 +15,7 @@ import {Router} from './src/routes/Routes';
 import {theme} from './src/theme/theme';
 initializeStorage(MMKVStorage);
 const queryClient = new QueryClient();
+
 function App(): JSX.Element {
   return (
     <AuthCredentialsProvider>
