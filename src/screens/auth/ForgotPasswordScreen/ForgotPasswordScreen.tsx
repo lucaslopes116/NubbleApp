@@ -1,22 +1,35 @@
 import React from 'react';
 
+import {useAuthRequestNewPassword} from '@domain';
 import {zodResolver} from '@hookform/resolvers/zod';
+import {useToastService} from '@services';
 import {useForm} from 'react-hook-form';
 
 import {Button, FormTextInput, Screen, Text} from '@components';
 import {useResetNavigationSuccess} from '@hooks';
-import {AuthScreenProps} from '@routes';
+import {AuthScreenProps, AuthStackParamList} from '@routes';
 
 import {
   ForgotPasswordSchema,
   forgotPasswordSchema,
 } from './forgotPasswordSchema';
 
-export function ForgotPasswordScreen(
-  props: AuthScreenProps<'ForgotPasswordScreen'>,
-) {
-  console.log(props);
+const resetParam: AuthStackParamList['SuccessScreen'] = {
+  title: `Enviamos as instruções ${'\n'}para seu e-mail`,
+  description: 'Clique no link enviado no seu e-mail para recuperar sua senha',
+  icon: {
+    name: 'messageRound',
+    color: 'primary',
+  },
+};
+
+export function ForgotPasswordScreen({}: AuthScreenProps<'ForgotPasswordScreen'>) {
   const {reset} = useResetNavigationSuccess();
+  const {showToast} = useToastService();
+  const {requestNewPassword, isLoading} = useAuthRequestNewPassword({
+    onSuccess: () => reset(resetParam),
+    onError: message => showToast({message, type: 'error'}),
+  });
   const {control, formState, handleSubmit} = useForm<ForgotPasswordSchema>({
     resolver: zodResolver(forgotPasswordSchema),
     defaultValues: {
@@ -25,17 +38,7 @@ export function ForgotPasswordScreen(
     mode: 'onChange',
   });
   function submitForm(values: ForgotPasswordSchema) {
-    console.log(values);
-    // TODO: submit form
-    reset({
-      title: `Enviamos as instruções ${'\n'}para seu e-mail`,
-      description:
-        'Clique no link enviado no seu e-mail para recuperar sua senha',
-      icon: {
-        name: 'messageRound',
-        color: 'primary',
-      },
-    });
+    requestNewPassword(values.email);
   }
   return (
     <Screen canGoBack>
@@ -53,6 +56,7 @@ export function ForgotPasswordScreen(
         boxProps={{mb: 's40'}}
       />
       <Button
+        loading={isLoading}
         disabled={!formState.isValid}
         onPress={handleSubmit(submitForm)}
         title="Recuperar senha"

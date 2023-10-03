@@ -5,6 +5,10 @@ export interface AuthCredentials {
   user: User;
 }
 
+export interface ForgotPasswordParam {
+  email: string;
+}
+
 export interface FieldIsAvailableAPI {
   message: string;
   isAvailable: boolean;
