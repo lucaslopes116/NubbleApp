@@ -1,5 +1,4 @@
-/* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useEffect} from 'react';
 import {RefreshControl, ScrollView} from 'react-native';
 
 import {useUserGetById} from '@domain';
@@ -13,13 +12,16 @@ export function ProfileScreen({route}: AppScreenProps<'ProfileScreen'>) {
   const {isError, isLoading, user, refetch, isFetching} =
     useUserGetById(userId);
 
+  useEffect(() => {
+    console.log('MONTOU', userId, user);
+  }, [userId, user]);
+
   return (
     <Screen canGoBack>
       {isLoading && <ActivityIndicator color="primary" />}
       {isError && <Text> error ao carregar perfil do usuário</Text>}
       {user && (
         <ScrollView
-          style={{flex: 1}}
           refreshControl={
             <RefreshControl refreshing={isFetching} onRefresh={refetch} />
           }>
