@@ -38,7 +38,8 @@
       ],
       "@services": [
         "src/services"
-      ]
+      ],
+      "test-utils": ["src/test/test-utils"]
     }
   }
 }
