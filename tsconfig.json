@@ -39,7 +39,8 @@
       "@services": [
         "src/services"
       ],
-      "test-utils": ["src/test/test-utils"]
+      "test-utils": ["src/test/test-utils"],
+      "@test": ["src/test"],
     }
   }
 }
