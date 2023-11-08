@@ -20,6 +20,7 @@ export function PostCommentScreen({
   const postId = route.params.postId;
   const postAuthorId = route.params.postAuthorId;
   const {list, fetchNextPage, hasNextPage} = usePostCommentList(postId);
+
   const {userId} = useAuthCredentials();
 
   const {bottom} = useAppSafeArea();
