@@ -3,9 +3,10 @@
     "source.fixAll.eslint": true
   },
   "cSpell.words": [
+    "MMKV",
     "shopify",
     "tanstack",
-    "Zustand",
-    "MMKV"
+    "unmock",
+    "Zustand"
   ]
 }
