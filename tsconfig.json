@@ -41,6 +41,7 @@
       ],
       "test-utils": ["src/test/test-utils"],
       "@test": ["src/test"],
+      "@assets": ["src/assets"],
     }
   }
 }
