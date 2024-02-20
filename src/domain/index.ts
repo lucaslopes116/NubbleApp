@@ -1,6 +1,4 @@
-export * from './Post/postService';
-export * from './Post/useCases/usePostList';
-export * from './Post/postTypes';
 export * from './PostComment/';
+export * from './Post';
 export * from './Auth';
 export * from './User';
