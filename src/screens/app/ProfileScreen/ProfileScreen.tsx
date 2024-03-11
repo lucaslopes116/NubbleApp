@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {RefreshControl, ScrollView} from 'react-native';
 
 import {useUserGetById} from '@domain';
@@ -11,10 +11,6 @@ export function ProfileScreen({route}: AppScreenProps<'ProfileScreen'>) {
 
   const {isError, isLoading, user, refetch, isFetching} =
     useUserGetById(userId);
-
-  useEffect(() => {
-    console.log('MONTOU', userId, user);
-  }, [userId, user]);
 
   return (
     <Screen canGoBack>

@@ -33,4 +33,8 @@ jest.mock('@react-native-camera-roll/camera-roll', () => ({
   },
 }));
 
+jest.mock('expo-image-manipulator', () => ({
+  manipulateAsync: jest.fn(),
+}));
+
 initializeStorage(inMemoryStorage);

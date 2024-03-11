@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import {useAppTheme} from '@hooks';
+import {colors} from '@theme';
 
 import {Box, BoxProps} from '../Box/Box';
 import {$fontFamily, $fontSizes, Text} from '../Text/Text';
@@ -28,6 +29,7 @@ export function TextInput({
   containerProps,
   ...rnTextInputProps
 }: TextInputProps) {
+  // eslint-disable-next-line @typescript-eslint/no-shadow
   const {colors} = useAppTheme();
   const inputRef = useRef<RNTextInput>(null);
 
@@ -50,7 +52,10 @@ export function TextInput({
             {label}
           </Text>
         )}
-        <Box {...$textInputContainer} {...containerProps}>
+        <Box
+          {...$textInputContainer}
+          {...containerProps}
+          backgroundColor="grayWhite">
           {LeftComponent && (
             <Box justifyContent="center" mr="s16">
               {LeftComponent}
@@ -83,7 +88,8 @@ export const $textInputStyle: TextStyle = {
   padding: 0,
   flexGrow: 1,
   flexShrink: 1,
-  color: 'black',
+  color: colors.palette.grayBlack,
   fontFamily: $fontFamily.regular,
+
   ...$fontSizes.paragraphMedium,
 };
