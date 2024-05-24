@@ -22,8 +22,13 @@ async function createPost(
   const response = await api.postForm<PostAPI>('user/post', form);
   return response.data;
 }
+async function getById(postId: string): Promise<PostAPI> {
+  const response = await api.get<PostAPI>(`user/post/${postId}`);
+  return response.data;
+}
 
 export const postApi = {
   getList,
   createPost,
+  getById,
 };
