@@ -1,12 +1,6 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": true
   },
-  "cSpell.words": [
-    "MMKV",
-    "shopify",
-    "tanstack",
-    "unmock",
-    "Zustand"
-  ]
+  "cSpell.words": ["MMKV", "shopify", "tanstack", "unmock", "Zustand"]
 }

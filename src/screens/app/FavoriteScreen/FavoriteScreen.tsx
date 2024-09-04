@@ -44,7 +44,7 @@ export function FavoriteScreen({}: AppTabScreenProps<'FavoriteScreen'>) {
     <Screen title="Favoritos">
       <Text preset="headingSmall">Favorite Screen</Text>
       <InfinityScrollList
-        queryKey={QueryKeys.FavoriteList}
+        queryKey={[QueryKeys.FavoriteList]}
         getList={page => postReactionService.getMyReactions('favorite', page)}
         renderItem={renderItem}
         flatListProps={{

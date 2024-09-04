@@ -1,5 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
-
 import React, {useCallback, useEffect, useRef} from 'react';
 import {Animated} from 'react-native';
 
