@@ -4,8 +4,9 @@ import {ActivityIndicator, View} from 'react-native';
 import {User, authService, useUserUpdate} from '@domain';
 import {useAsyncValidation} from '@form';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {useForm} from 'react-hook-form';
 import {useNavigation} from '@react-navigation/native';
+import {useForm} from 'react-hook-form';
+
 import {FormTextInput} from '@components';
 
 import {EditProfileSchema, editProfileSchema} from '../editProfileSchema';
