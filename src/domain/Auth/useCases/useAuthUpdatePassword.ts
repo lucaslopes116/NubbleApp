@@ -1,9 +1,9 @@
 import {MutationOptions} from '@infra';
 import {useMutation} from '@tanstack/react-query';
+import {errorUtils} from '@utils';
 
 import {EditPasswordParams} from '..';
 import {authService} from '../authService';
-import {errorUtils} from '@utils';
 
 export function useAuthUpdatePassword(options?: MutationOptions<string>) {
   const {mutate, isLoading} = useMutation<string, unknown, EditPasswordParams>({

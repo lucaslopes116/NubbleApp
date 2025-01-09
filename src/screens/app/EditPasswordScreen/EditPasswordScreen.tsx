@@ -2,8 +2,9 @@ import React from 'react';
 
 import {useAuthUpdatePassword} from '@domain';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {useForm} from 'react-hook-form';
 import {useToastService} from '@services';
+import {useForm} from 'react-hook-form';
+
 import {Button, FormPasswordInput, Screen} from '@components';
 import {AppScreenProps} from '@routes';
 

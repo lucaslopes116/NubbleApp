@@ -1,13 +1,14 @@
 import React, {useCallback, useEffect, useRef} from 'react';
 import {Animated} from 'react-native';
 
-import {useToast, useToastService} from '@services';
+import {ToastPosition, useToast, useToastService} from '@services';
 
 import {ToasContent} from './components/ToasContent';
 
 const DEFAULT_DURATION = 4000;
 export function Toast() {
   const toast = useToast();
+  const position: ToastPosition = toast?.position || 'top';
   const {hideToast} = useToastService();
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -46,8 +47,13 @@ export function Toast() {
   return (
     <Animated.View
       testID={'toast-message'}
-      style={{position: 'absolute', alignSelf: 'center', opacity: fadeAnim}}>
-      <ToasContent toast={toast} />
+      style={{
+        position: 'absolute',
+        alignSelf: 'center',
+        opacity: fadeAnim,
+        [position]: 100,
+      }}>
+      <ToasContent toast={toast} hideToast={hideToast} />
     </Animated.View>
   );
 }
