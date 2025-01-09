@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {PermissionsAndroid, Platform} from 'react-native';
+
 import messaging from '@react-native-firebase/messaging';
 import {settingsService, useAppColor} from '@services';
 import {ThemeProvider} from '@shopify/restyle';
