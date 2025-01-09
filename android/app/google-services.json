@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "464426919819",
+    "project_id": "nubleapp-f1467",
+    "storage_bucket": "nubleapp-f1467.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464426919819:android:c8846c699366d2f82df18e",
+        "android_client_info": {
+          "package_name": "br.com.coffstack.nubble"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpIpfZ7CHl-VokT1PC1dOVF_4maaWF_go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464426919819:android:9649ca8521ba6be52df18e",
+        "android_client_info": {
+          "package_name": "com.nubbleapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpIpfZ7CHl-VokT1PC1dOVF_4maaWF_go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
