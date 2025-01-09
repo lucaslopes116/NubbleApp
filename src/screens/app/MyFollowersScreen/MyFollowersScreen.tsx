@@ -2,10 +2,10 @@ import React from 'react';
 
 import {followService, useRemoveFollow} from '@domain';
 import {QueryKeys} from '@infra';
+import {useToastService} from '@services';
 
 import {UserListTemplate} from '@components';
 import {AppScreenProps} from '@routes';
-import {useToastService} from '@services';
 
 export function MyFollowersScreen({}: AppScreenProps<'MyFollowersScreen'>) {
   const {showToast} = useToastService();

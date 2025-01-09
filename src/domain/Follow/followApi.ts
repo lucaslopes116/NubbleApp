@@ -1,4 +1,5 @@
 import {PageAPI, PageParams, api} from '@api';
+
 import {FollowerUserAPI, FollowingUserAPI} from './followTypes';
 async function isFollowing(userId: string): Promise<{isFollowing: boolean}> {
   const response = await api.get<{isFollowing: boolean}>(
