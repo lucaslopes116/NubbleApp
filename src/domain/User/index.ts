@@ -5,3 +5,4 @@ export * from './userAdapter';
 export * from './useCases/useUserSearch';
 export {USER_PATH} from './userApi';
 export * from './useCases/useUserUpdate';
+export * from './useCases/useSaveNotificationToken';
