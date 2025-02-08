@@ -29,8 +29,8 @@ afterAll(() => {
 describe('integration: SearchScreen', () => {
   test('Search Flow', async () => {
     // 1) Navigate to Search Screen
-    renderScreen(<AppStack initialRouteName="SearchScreen" />);
 
+    renderScreen(<AppStack initialRouteName="SearchScreen" />);
     // 2) Find the search input and type user name
     const inputText = screen.getByPlaceholderText(/digite sua busca/i);
     fireEvent.changeText(inputText, 'mar');

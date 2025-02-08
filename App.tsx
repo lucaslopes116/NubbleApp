@@ -18,6 +18,11 @@ initializeStorage(MMKVStorage);
 const queryClient = new QueryClient();
 
 async function requestPermission() {
+  console.log('aqui');
+  const token = await messaging().getToken();
+
+  console.log('Token:', token);
+
   if (Platform.OS === 'ios') {
     const authStatus = await messaging().requestPermission();
     const enabled =
